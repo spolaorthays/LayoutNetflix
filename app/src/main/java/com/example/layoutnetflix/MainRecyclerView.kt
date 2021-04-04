@@ -31,13 +31,19 @@ class MainRecyclerView (val viewModel: MainViewModel, val arraylist: ArrayList<U
 
         fun bind(user: User) {
             name.text = user.name
-            if (arraylist.size == 1) { //Mudar essa logica pro size ser igual a 0 e mostrar pára add perfil
+            if (arraylist.size == 1) { //Mudar essa logica pro size ser igual a 0 e mostrar para add perfil
                 Picasso.get().load(R.drawable.img_add_user).into(image)
                 card.setOnClickListener {
                     itemView.context.startActivity(Intent(this.itemView.context, NewUserActivity::class.java))
                 }
             } else {
                 Picasso.get().load(R.drawable.img_user).into(image)
+
+                if (user.name.contains("Novo")) {
+                    card.setOnClickListener {
+                        itemView.context.startActivity(Intent(this.itemView.context, NewUserActivity::class.java))
+                    }
+                }
             }
         }
 

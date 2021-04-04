@@ -24,6 +24,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     var userList = MutableLiveData<ArrayList<User>>()
     var newUserList = arrayListOf<User>()
+    private val context = getApplication<Application>().applicationContext
 
     init {
         init()
@@ -40,9 +41,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun init() {
-        //populateList()
-        emptyList()
-        userList.value = newUserList //Essa linha que fez aparecer a lista
+        populateList()
+        //emptyList()
+        userList.value = newUserList
     }
 
     fun populateList() {
@@ -53,10 +54,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         newUserList.add(user1)
         newUserList.add(user1)
         newUserList.add(user1)
+        newUserList.add(User("Novo Usuário", context.getDrawable(R.drawable.img_add_user)))
     }
 
     fun emptyList() {
-        val user1 = User("Novo perfil")
-        newUserList.add(user1)
+        newUserList = ArrayList()
     }
 }

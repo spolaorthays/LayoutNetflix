@@ -1,6 +1,7 @@
 package com.example.layoutnetflix
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity() {
         setupRecyclerView()
     }
 
-    fun setupRecyclerView() { //TODO recycler está vazio
+    fun setupRecyclerView() {
         binding.recyclerUsers.layoutManager = GridLayoutManager(this, 2)
         viewModel.userList.observe(this, Observer {
             binding.recyclerUsers.adapter = MainRecyclerView(viewModel, it)
