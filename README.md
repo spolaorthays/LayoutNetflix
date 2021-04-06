@@ -1,3 +1,3 @@
 # LayoutNetflix
 
-Projeto para simulador layout da aplicação Netflix
+Projeto para simular layout da aplicação Netflix
