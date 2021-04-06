@@ -51,10 +51,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         newUserList.add(user1)
         newUserList.add(user1)
         newUserList.add(user1)
-        newUserList.add(user1)
-        newUserList.add(user1)
-        newUserList.add(user1)
-        newUserList.add(User("Novo Usuário", context.getDrawable(R.drawable.img_add_user)))
+        newUserList.add(User("Kids"))
+        newUserList.add(User("Novo Usuário"))
     }
 
     fun emptyList() {

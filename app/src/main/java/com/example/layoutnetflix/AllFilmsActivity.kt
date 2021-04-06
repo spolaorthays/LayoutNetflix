@@ -3,12 +3,9 @@ package com.example.layoutnetflix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class NewUserActivity : AppCompatActivity() {
-
+class AllFilmsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_user)
+        setContentView(R.layout.activity_all_films)
     }
-
-    //TODO fazer logica daqui
 }

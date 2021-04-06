@@ -10,9 +10,10 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class MainRecyclerView (val viewModel: MainViewModel, val arraylist: ArrayList<User>) : RecyclerView.Adapter<MainRecyclerView.ViewHolder>() {
+
+class MainRecyclerView(val viewModel: MainViewModel, val arraylist: ArrayList<User>) : RecyclerView.Adapter<MainRecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecyclerView.ViewHolder {
-        val root = LayoutInflater.from(parent.context).inflate(R.layout.item_user,parent,false)
+        val root = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
         return ViewHolder(root)
     }
 
@@ -24,7 +25,7 @@ class MainRecyclerView (val viewModel: MainViewModel, val arraylist: ArrayList<U
         return arraylist.size
     }
 
-    inner class ViewHolder (item: View) : RecyclerView.ViewHolder(item) {
+    inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         var image = item.findViewById<ImageView>(R.id.img_user)
         var name = item.findViewById<TextView>(R.id.tv_name)
         var card = item.findViewById<CardView>(R.id.card_user)
@@ -40,9 +41,13 @@ class MainRecyclerView (val viewModel: MainViewModel, val arraylist: ArrayList<U
                 Picasso.get().load(R.drawable.img_user).into(image)
 
                 if (user.name.contains("Novo")) {
+                    Picasso.get().load(R.drawable.img_add_user).into(image)
+
                     card.setOnClickListener {
                         itemView.context.startActivity(Intent(this.itemView.context, NewUserActivity::class.java))
                     }
+                } else if (user.name.contains("Kids")) {
+                    Picasso.get().load(R.drawable.img_kids).into(image)
                 }
             }
         }

@@ -1,13 +1,10 @@
 package com.example.layoutnetflix
 
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.layoutnetflix.databinding.ActivityMainBinding
-import com.squareup.picasso.Picasso
 
 class MainActivity : BaseActivity() {
 
@@ -18,6 +15,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //TODO remover a barra de "LayoutNetflix" do app
         binding = bind(R.layout.activity_main) {
             viewmodel = viewModel
             lifecycleOwner = this@MainActivity
